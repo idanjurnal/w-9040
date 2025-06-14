@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
@@ -27,8 +28,17 @@ const HistoTestimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-b from-cream-50 to-stone-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/06849598-4d8a-4553-a9fc-eb2a862f976f.png"
+          alt="Elegant botanical pattern background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/90 via-stone-100/80 to-stone-100/90"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +64,7 @@ const HistoTestimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="p-8">
                 <div className="text-stone-600 mb-4">
