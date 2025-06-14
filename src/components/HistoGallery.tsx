@@ -1,5 +1,12 @@
 
 import { motion } from 'framer-motion';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const HistoGallery = () => {
   const galleryImages = [
@@ -46,7 +53,7 @@ const HistoGallery = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-stone-800 mb-4">
-            Our <span className="font-serif italic">Stories</span>
+            Our <span className="font-serif italic">Portfolio</span>
           </h2>
           <div className="w-24 h-px bg-stone-600 mx-auto mb-6"></div>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed font-light">
@@ -55,36 +62,43 @@ const HistoGallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-lg shadow-sm aspect-[4/5] hover:shadow-lg transition-all duration-300"
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-light uppercase tracking-wider">{image.category}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel className="max-w-xl mx-auto mb-12">
+          <CarouselContent>
+            {galleryImages.map((image, index) => (
+              <CarouselItem key={index}>
+                <motion.div
+                  className="group relative overflow-hidden rounded-xl shadow-md aspect-[4/5] bg-white"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="text-sm font-light uppercase tracking-wider">{image.category}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center mt-6 space-x-2">
+            <CarouselPrevious className="bg-stone-200 hover:bg-stone-300 border-stone-300 text-stone-700" />
+            <CarouselNext className="bg-stone-200 hover:bg-stone-300 border-stone-300 text-stone-700" />
+          </div>
+        </Carousel>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-8"
         >
           <button className="px-10 py-4 border border-stone-600 text-stone-700 hover:bg-stone-600 hover:text-cream-100 font-light rounded-sm transition-all duration-300 transform hover:scale-105">
             View Complete Portfolio
