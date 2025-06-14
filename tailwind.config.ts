@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,30 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Earth tone colors for wedding photography
+				// Refined earth tone palette for Histo Project
 				cream: {
-					50: '#fefdf8',
-					100: '#fdf8e8',
-					200: '#faf0d0',
-					300: '#f6e4a6',
-					400: '#f0d06b',
-					500: '#eab83c',
-					600: '#d89f28',
-					700: '#b27f1f',
-					800: '#8f6420',
-					900: '#75531e'
-				},
-				amber: {
-					50: '#fffbeb',
-					100: '#fef3c7',
-					200: '#fde68a',
-					300: '#fcd34d',
-					400: '#fbbf24',
-					500: '#f59e0b',
-					600: '#d97706',
-					700: '#b45309',
-					800: '#92400e',
-					900: '#78350f'
+					50: '#fefdfb',
+					100: '#fef9f1',
+					200: '#fcf2e3',
+					300: '#f9e6c8',
+					400: '#f4d4a3',
+					500: '#edbf7c',
+					600: '#e4a856',
+					700: '#d18f3b',
+					800: '#b8752e',
+					900: '#9a5f26'
 				},
 				stone: {
 					50: '#fafaf9',
@@ -99,6 +86,18 @@ export default {
 					700: '#44403c',
 					800: '#292524',
 					900: '#1c1917'
+				},
+				olive: {
+					50: '#f8f8f6',
+					100: '#f0f0ed',
+					200: '#e2e1db',
+					300: '#d0cfc5',
+					400: '#b7b5a8',
+					500: '#9d9a88',
+					600: '#8a8572',
+					700: '#736f5e',
+					800: '#5f5c4f',
+					900: '#4e4b42'
 				},
 				wrlds: {
 					teal: '#9F9EA1',
