@@ -16,11 +16,11 @@ const BundlePackageCard = ({ bundle }: BundlePackageCardProps) => {
       
       { bundle.subPackages ? (
         <div className="grid md:grid-cols-5 gap-8 lg:gap-12 items-start">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 relative">
               {isLuxurious ? (
-                <div className="space-y-4">
+                <div className="relative">
                   <img src={bundle.image} alt={`${bundle.name} main`} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]"/>
-                  <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt={`${bundle.name} additional`} className="rounded-l-full shadow-xl w-full h-auto object-cover aspect-[4/3]"/>
+                  <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt={`${bundle.name} additional`} className="absolute bottom-0 right-0 rounded-l-full shadow-xl w-1/2 h-auto object-cover aspect-[4/3] transform translate-x-4 translate-y-4"/>
                 </div>
               ) : (
                 <img src={bundle.image} alt={bundle.name} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]"/>

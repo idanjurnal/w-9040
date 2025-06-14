@@ -49,14 +49,14 @@ const HistoTestimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+    <section id="testimonials" className="py-20 relative overflow-hidden bg-gradient-to-br from-stone-50 via-amber-50 to-orange-50">
       <div className="absolute inset-0 z-0">
         <img
           src="/lovable-uploads/06849598-4d8a-4553-a9fc-eb2a862f976f.png"
           alt="Elegant botanical pattern background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-50/85 via-orange-50/75 to-red-50/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-50/85 via-amber-50/75 to-orange-50/85"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,13 +67,13 @@ const HistoTestimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-amber-900 mb-4">
-            Stories from Our <span className="font-serif italic">Couples</span>
+          <h2 className="text-4xl md:text-5xl font-light text-stone-800 mb-4">
+            Our <span className="font-serif italic">Stories</span>
           </h2>
-          <div className="w-24 h-px bg-amber-700 mx-auto mb-6"></div>
-          <p className="text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed font-light">
-            The greatest joy comes from seeing our couples relive their most precious moments 
-            through the memories we've preserved together.
+          <div className="w-24 h-px bg-stone-700 mx-auto mb-6"></div>
+          <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed font-light">
+            Every couple has a unique story. Here are some precious moments 
+            we've had the honor to preserve.
           </p>
         </motion.div>
 
@@ -82,37 +82,37 @@ const HistoTestimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <Carousel className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-amber-200/50 overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 mx-2">
-                    <div className="p-6">
-                      <div className="text-amber-600 mb-4">
-                        <Quote className="w-6 h-6" />
+                <CarouselItem key={index}>
+                  <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-stone-200/50 overflow-hidden mx-4 p-8">
+                    <div className="text-center">
+                      <div className="text-stone-600 mb-6 flex justify-center">
+                        <Quote className="w-8 h-8" />
                       </div>
                       
-                      <div className="flex items-center mb-4">
+                      <div className="flex justify-center items-center mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-amber-500 fill-current" />
+                          <Star key={i} className="w-5 h-5 text-amber-500 fill-current mx-1" />
                         ))}
                       </div>
 
-                      <p className="text-amber-900 italic mb-6 leading-relaxed font-light text-sm">
+                      <p className="text-stone-700 italic mb-8 leading-relaxed font-light text-lg max-w-2xl mx-auto">
                         "{testimonial.text}"
                       </p>
 
-                      <div className="flex items-center">
+                      <div className="flex items-center justify-center">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-10 h-10 rounded-full object-cover mr-3"
+                          className="w-16 h-16 rounded-full object-cover mr-4"
                         />
-                        <div>
-                          <h4 className="font-medium text-amber-900 text-sm">{testimonial.name}</h4>
-                          <p className="text-xs text-amber-700 font-light">{testimonial.wedding}</p>
+                        <div className="text-left">
+                          <h4 className="font-medium text-stone-800 text-lg">{testimonial.name}</h4>
+                          <p className="text-stone-600 font-light">{testimonial.wedding}</p>
                         </div>
                       </div>
                     </div>
@@ -121,8 +121,8 @@ const HistoTestimonials = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8 space-x-2">
-              <CarouselPrevious className="bg-amber-100 hover:bg-amber-200 border-amber-300 text-amber-800" />
-              <CarouselNext className="bg-amber-100 hover:bg-amber-200 border-amber-300 text-amber-800" />
+              <CarouselPrevious className="bg-stone-100 hover:bg-stone-200 border-stone-300 text-stone-800" />
+              <CarouselNext className="bg-stone-100 hover:bg-stone-200 border-stone-300 text-stone-800" />
             </div>
           </Carousel>
         </motion.div>
