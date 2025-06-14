@@ -63,6 +63,43 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Earth tone colors for wedding photography
+				cream: {
+					50: '#fefdf8',
+					100: '#fdf8e8',
+					200: '#faf0d0',
+					300: '#f6e4a6',
+					400: '#f0d06b',
+					500: '#eab83c',
+					600: '#d89f28',
+					700: '#b27f1f',
+					800: '#8f6420',
+					900: '#75531e'
+				},
+				amber: {
+					50: '#fffbeb',
+					100: '#fef3c7',
+					200: '#fde68a',
+					300: '#fcd34d',
+					400: '#fbbf24',
+					500: '#f59e0b',
+					600: '#d97706',
+					700: '#b45309',
+					800: '#92400e',
+					900: '#78350f'
+				},
+				stone: {
+					50: '#fafaf9',
+					100: '#f5f5f4',
+					200: '#e7e5e4',
+					300: '#d6d3d1',
+					400: '#a8a29e',
+					500: '#78716c',
+					600: '#57534e',
+					700: '#44403c',
+					800: '#292524',
+					900: '#1c1917'
+				},
 				wrlds: {
 					teal: '#9F9EA1',
 					dark: '#3F3F3F',
@@ -78,6 +115,7 @@ export default {
 			},
 			fontFamily: {
 				'space': ['Space Grotesk', 'sans-serif'],
+				'serif': ['Playfair Display', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {
