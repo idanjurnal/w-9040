@@ -194,11 +194,50 @@ export const bundlePackages: BundlePackage[] = [
       name: "Luxurious Bundle", 
       title: "LUXURIOUS",
       price: "IDR 8,500,000",
-      features: ["Full cinematic video", "Complete prints collection", "Premium album design", "Drone footage", "Same day editing", "Social media package", "Free makeup & styling", "Free prewedding attire"],
-      images: [
-        "https://images.unsplash.com/photo-1532702824322-75c102758826?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1511285560921-50b39f4f2f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1616041158641-7a6305a46835?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-      ]
+      subPackages: [
+        {
+          title: "Prewedding",
+          features: [
+            "1 Photographer",
+            "1 Videographer", 
+            "1 Assistant",
+            "6 Hours Photo Session",
+            "Unlimited Shoots",
+            "Cinematic Video 1 - 2 Minutes",
+            "1 Printed Photo + Frame 16R",
+            "5 Printed Photo + Frame 5R",
+            "Free Potrait Video for Social Media 15-30 Second",
+            "Free Edit 150+ Photos Selected by Editor"
+          ]
+        },
+        {
+          title: "Traditional Ceremony",
+          features: [
+            "1 Photographer",
+            "1 Videographer",
+            "6 Hours Photo Session",
+            "Unlimited Shoots",
+            "Cinematic Video 1 - 2 Minutes",
+            "Free Potrait Video for Social Media 15-30 Second",
+            "Free Edit 100+ Photos Selected by Editor"
+          ]
+        },
+        {
+          title: "Wedding",
+          features: [
+            "1 Photographers",
+            "1 Candid Photographers",
+            "1 Videographer",
+            "1 Assistant",
+            "8 Hours Photo Session Wedding Day",
+            "1 Cinematic Wedding Video",
+            "1 Printed Photos + Frame 16RP",
+            "1 Album Magazine",
+            "1 Flashdisk 32GB",
+            "Free Edit 300+ Photos Selected by Editor"
+          ]
+        }
+      ],
+      image: "https://images.unsplash.com/photo-1532702824322-75c102758826?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     }
   ];
