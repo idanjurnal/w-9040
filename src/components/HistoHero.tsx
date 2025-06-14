@@ -16,8 +16,8 @@ const HistoHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="Wedding couple in natural setting"
+          src="/lovable-uploads/06849598-4d8a-4553-a9fc-eb2a862f976f.png"
+          alt="Elegant botanical pattern background"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/60 via-stone-900/40 to-stone-900/70"></div>
