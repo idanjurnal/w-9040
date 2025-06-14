@@ -6,6 +6,8 @@ interface BundlePackageCardProps {
 }
 
 const BundlePackageCard = ({ bundle }: BundlePackageCardProps) => {
+  const isLuxurious = bundle.title === "LUXURIOUS";
+  
   return (
     <div className="group transition-all duration-300 hover:scale-[1.02] p-4">
       <div className="text-center mb-6">
@@ -15,7 +17,14 @@ const BundlePackageCard = ({ bundle }: BundlePackageCardProps) => {
       { bundle.subPackages ? (
         <div className="grid md:grid-cols-5 gap-8 lg:gap-12 items-start">
           <div className="md:col-span-2">
-              <img src={bundle.image} alt={bundle.name} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]"/>
+              {isLuxurious ? (
+                <div className="space-y-4">
+                  <img src={bundle.image} alt={`${bundle.name} main`} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]"/>
+                  <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt={`${bundle.name} additional`} className="rounded-l-full shadow-xl w-full h-auto object-cover aspect-[4/3]"/>
+                </div>
+              ) : (
+                <img src={bundle.image} alt={bundle.name} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]"/>
+              )}
               <div className="bg-white/20 backdrop-blur-sm border border-stone-200/50 p-4 rounded-lg mt-8 flex justify-between items-center">
                   <div>
                       <h5 className="text-lg font-serif italic text-stone-800">{bundle.name}</h5>
