@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
@@ -28,7 +27,7 @@ const HistoTestimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-cream-50 to-stone-100">
+    <section id="testimonials" className="py-20 bg-gradient-to-b from-cream-50 to-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

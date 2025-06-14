@@ -1,8 +1,8 @@
 
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import HistoNavbar from '@/components/HistoNavbar';
+import HistoFooter from '@/components/HistoFooter';
 import ContactInfo from '@/components/ContactInfo';
 import FloatingContactButton from '@/components/FloatingContactButton';
 
@@ -21,10 +21,10 @@ const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
 
   return (
     <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
-      <Navbar />
+      <HistoNavbar />
       {children}
       {showContact && <ContactInfo />}
-      <Footer />
+      <HistoFooter />
       {showContact && <FloatingContactButton />}
     </div>
   );

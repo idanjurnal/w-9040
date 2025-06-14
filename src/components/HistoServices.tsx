@@ -1,71 +1,109 @@
-
 import { motion } from 'framer-motion';
-import { Heart, Camera, Users, Gift, Film, Image } from 'lucide-react';
+import { Camera, Video, Heart, Gift } from 'lucide-react';
 
 const HistoServices = () => {
-  const services = [
+  const packages = [
     {
-      icon: <Heart className="w-7 h-7" />,
-      title: "Engagement / Sanjit",
-      startPrice: "IDR 2,000,000",
-      description: "Intimate moments captured with warmth and authenticity, perfect for celebrating your commitment.",
+      category: "Engagement / Sanjit",
+      description: "Intimate moments that mark the beginning of your journey together",
+      icon: Heart,
       packages: [
-        { name: "Sequence I", price: "IDR 3,000,000", features: "Photo + Video documentation" },
-        { name: "Sequence II", price: "IDR 2,000,000", features: "Photo documentation only" }
+        {
+          name: "Sequence I",
+          description: "Photo + Video documentation",
+          price: "IDR 3,000,000",
+          features: ["Professional photography", "Cinematic videography", "Full edited photos", "Short video highlights"]
+        },
+        {
+          name: "Sequence II", 
+          description: "Photo documentation only",
+          price: "IDR 2,000,000",
+          features: ["Professional photography", "Full edited photos", "Online gallery", "Print-ready files"]
+        }
       ]
     },
     {
-      icon: <Camera className="w-7 h-7" />,
-      title: "Prewedding",
-      startPrice: "IDR 2,000,000",
-      description: "Romantic storytelling sessions that capture your unique love story before the big day.",
+      category: "Prewedding",
+      description: "Capturing your love story before the big day",
+      icon: Camera,
       packages: [
-        { name: "Sequence I", price: "IDR 2,000,000", features: "Photo documentation" },
-        { name: "Sequence II", price: "IDR 3,500,000", features: "Photo + Video + Prints" }
+        {
+          name: "Sequence I",
+          description: "Photo documentation",
+          price: "IDR 2,000,000", 
+          features: ["Professional photography", "Multiple outfit changes", "Location shooting", "Full edited photos"]
+        },
+        {
+          name: "Sequence II",
+          description: "Complete package with prints",
+          price: "IDR 3,500,000",
+          features: ["Photo + Video", "Premium prints", "Custom album", "Online gallery", "Social media content"]
+        }
       ]
     },
     {
-      icon: <Users className="w-7 h-7" />,
-      title: "Traditional Wedding",
-      startPrice: "IDR 4,000,000",
-      description: "Honoring cultural heritage with cinematic documentation of your traditional ceremonies.",
+      category: "Traditional Wedding",
+      description: "Honoring cultural traditions with artistic documentation",
+      icon: Gift,
       packages: [
-        { name: "Sequence I", price: "IDR 4,500,000", features: "Essential coverage" },
-        { name: "Sequence II", price: "IDR 5,000,000", features: "Extended coverage" },
-        { name: "Sequence III", price: "IDR 6,000,000", features: "Premium coverage" }
+        {
+          name: "Sequence I",
+          description: "Essential coverage",
+          price: "IDR 4,500,000",
+          features: ["6-hour coverage", "Traditional ceremony", "Family portraits", "Edited photos"]
+        },
+        {
+          name: "Sequence II", 
+          description: "Extended coverage",
+          price: "IDR 5,000,000",
+          features: ["8-hour coverage", "Video highlights", "Additional prints", "Custom album"]
+        },
+        {
+          name: "Sequence III",
+          description: "Premium documentation", 
+          price: "IDR 6,000,000",
+          features: ["Full day coverage", "Cinematic video", "Premium album", "Social media package"]
+        }
       ]
     },
     {
-      icon: <Film className="w-7 h-7" />,
-      title: "Wedding Day",
-      startPrice: "IDR 4,000,000",
-      description: "Complete documentation of your special day from dawn to dusk with cinematic storytelling.",
+      category: "Wedding Day",
+      description: "Complete documentation of your special day",
+      icon: Video,
       packages: [
-        { name: "Sequence I", price: "IDR 9,000,000", features: "Full day coverage" },
-        { name: "Sequence II", price: "IDR 11,000,000", features: "Premium full coverage" }
+        {
+          name: "Sequence I",
+          description: "Complete wedding coverage",
+          price: "IDR 9,000,000",
+          features: ["12-hour coverage", "Photo + Video", "Same day highlights", "Premium album", "Online gallery"]
+        },
+        {
+          name: "Sequence II",
+          description: "Luxury wedding documentation", 
+          price: "IDR 11,000,000",
+          features: ["Full day coverage", "Cinematic video", "Drone footage", "Premium prints", "Social media content", "Raw files"]
+        }
       ]
     }
   ];
 
   const bundlePackages = [
     {
-      icon: <Gift className="w-7 h-7" />,
-      title: "Premium Bundle",
+      name: "Premium Bundle",
+      description: "Prewedding + Wedding Day package",
       price: "IDR 7,500,000",
-      description: "Prewedding + Wedding Day with complete photo, video, and print documentation.",
-      features: ["Photo documentation", "Video documentation", "Printed frames & albums", "Bonus portrait videos"]
+      features: ["Photo documentation", "Video highlights", "Premium prints", "Custom album", "Free makeup consultation", "Free prewedding attire"]
     },
     {
-      icon: <Image className="w-7 h-7" />,
-      title: "Luxurious Bundle",
+      name: "Luxurious Bundle", 
+      description: "Complete cinematic experience",
       price: "IDR 8,500,000",
-      description: "The complete experience with full cinematic videos and premium prints.",
-      features: ["Full cinematic video", "Complete print collection", "Free makeup & attire", "Social media content"]
+      features: ["Full cinematic video", "Complete prints collection", "Premium album design", "Drone footage", "Same day editing", "Social media package", "Free makeup & styling", "Free prewedding attire"]
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-cream-50 to-stone-100">
+    <section id="services" className="py-20 bg-gradient-to-b from-cream-50 to-stone-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,44 +117,50 @@ const HistoServices = () => {
           </h2>
           <div className="w-24 h-px bg-stone-600 mx-auto mb-6"></div>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed font-light">
-            Every love story deserves to be told beautifully. We offer comprehensive packages 
-            designed to capture every precious moment of your journey.
+            Every love story is unique. Choose the perfect package to preserve your most precious moments 
+            with our honest, cinematic, and natural approach to wedding documentation.
           </p>
         </motion.div>
 
-        {/* Main Services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {services.map((service, index) => (
+        {/* Service Categories */}
+        <div className="space-y-16">
+          {packages.map((category, categoryIndex) => (
             <motion.div
-              key={index}
+              key={categoryIndex}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden"
             >
-              <div className="p-8">
+              <div className="p-8 border-b border-stone-200">
                 <div className="flex items-center mb-4">
-                  <div className="p-3 bg-stone-100 rounded-full text-stone-600 mr-4">
-                    {service.icon}
+                  <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mr-4">
+                    <category.icon className="w-6 h-6 text-stone-600" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-light text-stone-800">{service.title}</h3>
-                    <p className="text-stone-500 text-sm">Starting from {service.startPrice}</p>
+                    <h3 className="text-2xl font-light text-stone-800">{category.category}</h3>
+                    <p className="text-stone-600 font-light">{category.description}</p>
                   </div>
                 </div>
-                <p className="text-stone-600 mb-6 leading-relaxed font-light">{service.description}</p>
-                <div className="space-y-3">
-                  {service.packages.map((pkg, pkgIndex) => (
-                    <div key={pkgIndex} className="flex justify-between items-center py-2 border-b border-stone-100 last:border-b-0">
-                      <div>
-                        <span className="font-medium text-stone-700">{pkg.name}</span>
-                        <p className="text-sm text-stone-500">{pkg.features}</p>
-                      </div>
-                      <span className="text-stone-600 font-light">{pkg.price}</span>
-                    </div>
-                  ))}
-                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
+                {category.packages.map((pkg, pkgIndex) => (
+                  <div key={pkgIndex} className="border border-stone-200 rounded-lg p-6 hover:shadow-md transition-all duration-300">
+                    <h4 className="text-xl font-medium text-stone-800 mb-2">{pkg.name}</h4>
+                    <p className="text-stone-600 text-sm mb-4 font-light">{pkg.description}</p>
+                    <p className="text-2xl font-light text-stone-800 mb-4">{pkg.price}</p>
+                    <ul className="space-y-2">
+                      {pkg.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-sm text-stone-600 flex items-center font-light">
+                          <div className="w-1.5 h-1.5 bg-stone-400 rounded-full mr-2"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}
@@ -128,66 +172,51 @@ const HistoServices = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mt-20"
         >
-          <h3 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
-            <span className="font-serif italic">Bundle</span> Packages
-          </h3>
-          <div className="w-16 h-px bg-stone-600 mx-auto mb-6"></div>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
-            Complete your love story with our thoughtfully curated bundle packages, 
-            including complimentary makeup and attire for the full experience.
-          </p>
-        </motion.div>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
+              Bundle <span className="font-serif italic">Packages</span>
+            </h3>
+            <div className="w-20 h-px bg-stone-600 mx-auto mb-6"></div>
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">
+              Complete packages that combine multiple services for the best value and experience
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {bundlePackages.map((bundle, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-stone-800 text-cream-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
-            >
-              <div className="p-8">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-stone-700 rounded-full text-cream-200 mr-4">
-                    {bundle.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-2xl font-light text-cream-100">{bundle.title}</h4>
-                    <p className="text-cream-300 text-lg font-light">{bundle.price}</p>
-                  </div>
-                </div>
-                <p className="text-cream-200 mb-6 leading-relaxed font-light">{bundle.description}</p>
-                <ul className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {bundlePackages.map((bundle, index) => (
+              <div key={index} className="bg-gradient-to-br from-stone-50 to-cream-50 border border-stone-200 rounded-lg p-8 hover:shadow-lg transition-all duration-300">
+                <h4 className="text-2xl font-medium text-stone-800 mb-2">{bundle.name}</h4>
+                <p className="text-stone-600 mb-4 font-light">{bundle.description}</p>
+                <p className="text-3xl font-light text-stone-800 mb-6">{bundle.price}</p>
+                <ul className="space-y-3">
                   {bundle.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-cream-200 font-light">
-                      <div className="w-1.5 h-1.5 bg-cream-300 rounded-full mr-3"></div>
+                    <li key={featureIndex} className="text-stone-600 flex items-center font-light">
+                      <div className="w-2 h-2 bg-stone-400 rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16 p-8 bg-cream-100 rounded-lg border border-stone-200"
+          className="text-center mt-16"
         >
-          <p className="text-stone-700 text-lg font-light leading-relaxed">
-            All packages include full-edited photos, cinematic videos, printed frames, albums, 
-            and bonus short portrait videos for social media. 
-            <span className="block mt-2 text-stone-600">
-              Full package clients receive complimentary makeup & prewedding attire.
-            </span>
-          </p>
+          <div className="bg-stone-50 rounded-lg p-8 border border-stone-200">
+            <h4 className="text-xl font-medium text-stone-800 mb-3">Special Bonus</h4>
+            <p className="text-stone-600 font-light">
+              Clients who choose our full packages receive complimentary makeup consultation and prewedding attire 
+              to make your experience even more complete and comfortable.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
