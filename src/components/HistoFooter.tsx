@@ -1,9 +1,6 @@
-
 import { Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
-
 const HistoFooter = () => {
-  return (
-    <footer className="bg-stone-900 text-cream-100 pt-16 pb-8 w-full">
+  return <footer className="bg-stone-900 text-cream-100 pt-16 pb-8 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 1. ADDITIONAL, TERMS & CONDITIONS */}
@@ -54,33 +51,11 @@ const HistoFooter = () => {
 
         {/* 2. LET'S CONNECT */}
         <div className="mb-14">
-          <h4 className="text-2xl font-serif italic mb-6 text-cream-100 tracking-wide">Let's Connect</h4>
+          
           <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-            <a
-              href="https://wa.me/6281234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp</span>
-            </a>
-            <a
-              href="https://instagram.com/histoproject"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-gradient-to-r from-amber-700 to-orange-600 hover:from-amber-800 hover:to-orange-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-            >
-              <Instagram className="w-5 h-5" />
-              <span>@histoproject</span>
-            </a>
-            <a
-              href="mailto:hello@histoproject.com"
-              className="flex items-center space-x-2 bg-stone-700 hover:bg-stone-800 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-            >
-              <Mail className="w-5 h-5" />
-              <span>hello@histoproject.com</span>
-            </a>
+            
+            
+            
           </div>
         </div>
 
@@ -94,8 +69,6 @@ const HistoFooter = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default HistoFooter;
