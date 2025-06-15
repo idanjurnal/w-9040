@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ScrollQuoteReveal from './ScrollQuoteReveal';
+
 const HistoGallery = () => {
-  // Sisa gambar upload yang belum digunakan di packages/bundle:
+  // Updated gallery images with new traditional wedding photo
   const galleryImages = [{
     url: "/lovable-uploads/20218d11-3345-48b5-815e-def6b465fc76.png",
     // Couple + anak-anak
@@ -14,9 +15,9 @@ const HistoGallery = () => {
     alt: "Coffee Engagement Details",
     category: "Prewedding"
   }, {
-    url: "/lovable-uploads/8d434a94-7b80-4f60-a5cb-e23e24e65585.png",
-    // Group wedding pose
-    alt: "Traditional wedding with friends",
+    url: "/lovable-uploads/09571b0f-fe63-43fd-9373-fc827bff8a2c.png",
+    // New traditional wedding image with couple in traditional attire
+    alt: "Traditional wedding couple",
     category: "Traditional"
   }, {
     url: "/lovable-uploads/48ce83d9-42b7-4d95-9cbb-b918e3b63efc.png",
@@ -98,4 +99,5 @@ const HistoGallery = () => {
       </div>
     </section>;
 };
+
 export default HistoGallery;
