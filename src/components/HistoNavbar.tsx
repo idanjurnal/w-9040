@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from "lucide-react";
@@ -74,6 +75,16 @@ const HistoNavbar = () => {
             >
               Home
             </button>
+            {/* --- Added About Us link --- */}
+            <button 
+              onClick={() => scrollToSection('about-us')}
+              className={cn(
+                "text-sm font-light transition-colors hover:opacity-80",
+                isScrolled ? "text-stone-700" : "text-cream-100"
+              )}
+            >
+              About Us
+            </button>
             <button 
               onClick={() => scrollToSection('services')}
               className={cn(
@@ -147,6 +158,16 @@ const HistoNavbar = () => {
           >
             Home
           </button>
+          {/* --- Added About Us link in mobile --- */}
+          <button 
+            onClick={() => scrollToSection('about-us')}
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-sm font-light",
+              isScrolled ? "text-stone-700 hover:bg-stone-100" : "text-cream-100 hover:bg-stone-800"
+            )}
+          >
+            About Us
+          </button>
           <button 
             onClick={() => scrollToSection('services')}
             className={cn(
@@ -190,3 +211,4 @@ const HistoNavbar = () => {
 };
 
 export default HistoNavbar;
+
