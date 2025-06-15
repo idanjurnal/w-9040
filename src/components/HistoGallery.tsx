@@ -1,8 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ScrollQuoteReveal from './ScrollQuoteReveal';
-
 const HistoGallery = () => {
   // Updated gallery images with new traditional wedding photo
   const galleryImages = [{
@@ -79,12 +77,9 @@ const HistoGallery = () => {
         </Carousel>
         {/* Tambahkan Scroll-triggered Quote Reveal */}
         <div className="my-16">
-          <ScrollQuoteReveal 
-            quote={`Life is like a camera.
+          <ScrollQuoteReveal quote={`Life is like a camera.
 Just focus on what’s important and capture the good times
-develop from the negatives, and if things don’t work out, just take another shot.`} 
-            author="Histo Project" 
-          />
+develop from the negatives, and if things don’t work out, just take another shot.`} author="Histo Project" />
         </div>
         <motion.div initial={{
         opacity: 0,
@@ -98,12 +93,9 @@ develop from the negatives, and if things don’t work out, just take another sh
       }} viewport={{
         once: true
       }} className="text-center mt-8">
-          <button className="px-10 py-4 border border-stone-600 text-stone-700 hover:bg-stone-600 hover:text-cream-100 font-light rounded-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-            View Complete Portfolio
-          </button>
+          
         </motion.div>
       </div>
     </section>;
 };
-
 export default HistoGallery;

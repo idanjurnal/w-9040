@@ -1,4 +1,3 @@
-
 import { Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 const HistoFooter = () => {
   return <footer className="bg-stone-900 text-cream-100 pt-16 pb-8 w-full">
@@ -52,33 +51,20 @@ const HistoFooter = () => {
 
         {/* 2. LET'S CONNECT */}
         <div className="mb-14">
-          <h4 className="text-2xl font-serif italic mb-6 text-cream-100 tracking-wide text-center">Let's Connect</h4>
+          
           
           <div className="flex flex-col sm:flex-row sm:items-center gap-6 justify-center">
-            <a 
-              href="https://www.instagram.com/histo.project?utm_source=ig_web_button_share_sheet&igsh=MWtlNmVwbzY3eGZuaw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-stone-300 hover:text-cream-100 transition-colors"
-            >
+            <a href="https://www.instagram.com/histo.project?utm_source=ig_web_button_share_sheet&igsh=MWtlNmVwbzY3eGZuaw==" target="_blank" rel="noopener noreferrer" className="flex items-center text-stone-300 hover:text-cream-100 transition-colors">
               <Instagram className="w-5 h-5 mr-2" />
               @histo.project
             </a>
             
-            <a 
-              href="https://wa.me/6289518297897"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-stone-300 hover:text-cream-100 transition-colors"
-            >
+            <a href="https://wa.me/6289518297897" target="_blank" rel="noopener noreferrer" className="flex items-center text-stone-300 hover:text-cream-100 transition-colors">
               <MessageCircle className="w-5 h-5 mr-2" />
               +62 895-1829-7897
             </a>
             
-            <a 
-              href="mailto:histoproject@gmail.com"
-              className="flex items-center text-stone-300 hover:text-cream-100 transition-colors"
-            >
+            <a href="mailto:histoproject@gmail.com" className="flex items-center text-stone-300 hover:text-cream-100 transition-colors">
               <Mail className="w-5 h-5 mr-2" />
               histoproject@gmail.com
             </a>
