@@ -35,7 +35,7 @@ const HistoServices = () => {
               ${categoryIndex % 4 === 3 ? 'bg-gradient-to-r from-blue-50 to-indigo-50' : ''}
               rounded-2xl p-8 mb-12
             `}>
-              <ServiceCategory category={category} categoryIndex={categoryIndex} />
+              <ServiceCategory category={category} categoryIndex={categoryIndex} sectionImage={category.sectionImage} />
             </div>
           ))}
         </div>

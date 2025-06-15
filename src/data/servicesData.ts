@@ -14,6 +14,7 @@ export interface ServiceCategoryData {
   description: string;
   icon: React.ElementType;
   packages: Package[];
+  sectionImage?: string; // New: allows free assignment of service image for each section
 }
 
 interface SubPackage {
@@ -48,6 +49,7 @@ export const packages: ServiceCategoryData[] = [
       category: "Engagement / Sanjit",
       description: "Intimate moments that mark the beginning of your journey together",
       icon: Heart,
+      sectionImage: "/lovable-uploads/8185c133-59e6-44e4-826c-e4638031a64a.png",
       packages: [
         {
           name: "Sequence I",
@@ -57,7 +59,7 @@ export const packages: ServiceCategoryData[] = [
             "1 Photographer", "1 Assistant", "5 Hours Photo Session", "Unlimited Shoots",
             "Free Edit 100+ Photos", "All Files via Google Drive"
           ],
-          image: "/lovable-uploads/8185c133-59e6-44e4-826c-e4638031a64a.png" // Gambar pertama dari upload (pasangan duduk)
+          image: ""
         },
         {
           name: "Sequence II",
@@ -68,7 +70,7 @@ export const packages: ServiceCategoryData[] = [
             "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "Free Edit 100+ Photos",
             "All Files via Google Drive"
           ],
-          image: "" // Tidak perlu, sudah tidak ditampilkan per sequence
+          image: ""
         }
       ]
     },
@@ -76,6 +78,7 @@ export const packages: ServiceCategoryData[] = [
       category: "Prewedding",
       description: "Capturing your love story before the big day",
       icon: Camera,
+      sectionImage: "/lovable-uploads/0038392e-0161-46ee-9883-3ad49c14a6c8.png",
       packages: [
         {
           name: "Sequence I",
@@ -85,7 +88,7 @@ export const packages: ServiceCategoryData[] = [
             "1 Photographer", "1 Assistant", "4 Hours Photo Session", "Unlimited Shoots",
             "Free Edit 150+ Photos Selected by Editor"
           ],
-          image: "/lovable-uploads/0038392e-0161-46ee-9883-3ad49c14a6c8.png" // Close-up Prewedding
+          image: ""
         },
         {
           name: "Sequence II",
@@ -105,6 +108,7 @@ export const packages: ServiceCategoryData[] = [
       category: "Traditional Wedding",
       description: "Honoring cultural traditions with artistic documentation",
       icon: Gift,
+      sectionImage: "/lovable-uploads/c5ae7060-9deb-438d-9b1c-929eb6955277.png",
       packages: [
         {
           name: "Sequence I",
@@ -116,7 +120,7 @@ export const packages: ServiceCategoryData[] = [
             "1 Printed Photo + Frame 16R", "Files via Google Drive",
             "Free Edit 300+ Photos Selected by Editor"
           ],
-          image: "/lovable-uploads/f4de4469-2c9d-4a45-b471-3140614835dd.png" // Pasangan adat
+          image: ""
         },
         {
           name: "Sequence II",
@@ -151,6 +155,7 @@ export const packages: ServiceCategoryData[] = [
       category: "Wedding Day",
       description: "Complete documentation of your special day",
       icon: Video,
+      sectionImage: "/lovable-uploads/f8552675-0cb3-418f-a593-cd80f94205d4.png",
       packages: [
         {
           name: "Sequence I",
@@ -162,7 +167,7 @@ export const packages: ServiceCategoryData[] = [
             "Free Flashdisk 16 GB", "Free Potrait Video for Social Media 15-30 Second",
             "Free Edit 300+ Photos Selected by Editor"
           ],
-          image: "/lovable-uploads/f8552675-0cb3-418f-a593-cd80f94205d4.png" // Pengantin gaun panjang
+          image: ""
         },
         {
           name: "Sequence II",
