@@ -1,10 +1,10 @@
+
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import HistoNavbar from '@/components/HistoNavbar';
 import HistoFooter from '@/components/HistoFooter';
 import ContactInfo from '@/components/ContactInfo';
 import FloatingContactButton from '@/components/FloatingContactButton';
-import HiddenAdminAccess from '@/components/HiddenAdminAccess';
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -26,7 +26,6 @@ const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
       {showContact && <ContactInfo />}
       <HistoFooter />
       {showContact && <FloatingContactButton />}
-      <HiddenAdminAccess />
     </div>
   );
 };
