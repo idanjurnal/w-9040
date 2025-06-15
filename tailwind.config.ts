@@ -62,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Three-color palette for Histo Project
+				// Refined earth tone palette for Histo Project
 				cream: {
 					50: '#fefdfb',
 					100: '#fef9f1',
@@ -75,31 +75,6 @@ export default {
 					800: '#b8752e',
 					900: '#9a5f26'
 				},
-				sage: {
-					50: '#f6f7f6',
-					100: '#e3e7e3',
-					200: '#c7d0c7',
-					300: '#9fb09f',
-					400: '#7a8f7a',
-					500: '#5f725f',
-					600: '#4a5a4a',
-					700: '#3d4a3d',
-					800: '#333d33',
-					900: '#2c332c'
-				},
-				beige: {
-					50: '#faf9f7',
-					100: '#f2f0ec',
-					200: '#e6e1d7',
-					300: '#d5cdb8',
-					400: '#c4b498',
-					500: '#b5a082',
-					600: '#a18a6f',
-					700: '#86725d',
-					800: '#6d5e4e',
-					900: '#594d41'
-				},
-				// Keep existing colors for backward compatibility
 				stone: {
 					50: '#fafaf9',
 					100: '#f5f5f4',
