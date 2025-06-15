@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
-import { Upload, Trash2, Eye } from 'lucide-react';
+import { Upload, Trash2, Eye, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
 
@@ -28,7 +28,15 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Check if Supabase is properly configured
+  const isSupabaseConfigured = !!(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
+
   const fetchImages = useCallback(async () => {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return;
+    }
+
     try {
       const { data, error } = await supabase
         .from('website_images')
@@ -44,13 +52,18 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
     } finally {
       setLoading(false);
     }
-  }, [category]);
+  }, [category, isSupabaseConfigured]);
 
   useEffect(() => {
     fetchImages();
   }, [fetchImages]);
 
   const uploadImage = async (file: File) => {
+    if (!isSupabaseConfigured) {
+      toast.error('Supabase is not configured');
+      return;
+    }
+
     try {
       setUploading(true);
       
@@ -92,6 +105,11 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
   };
 
   const deleteImage = async (image: ImageData) => {
+    if (!isSupabaseConfigured) {
+      toast.error('Supabase is not configured');
+      return;
+    }
+
     try {
       // Delete from storage
       const filePath = image.url.split('/').slice(-2).join('/');
@@ -117,7 +135,7 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
-    if (!files) return;
+    if (!files || !isSupabaseConfigured) return;
 
     if (multiple) {
       Array.from(files).forEach(file => uploadImage(file));
@@ -128,6 +146,8 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
+    if (!isSupabaseConfigured) return;
+    
     const files = e.dataTransfer.files;
     if (!files) return;
 
@@ -144,6 +164,18 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   if (loading) {
     return <div className="p-4">Loading...</div>;
+  }
+
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-8">
+        <AlertCircle className="text-orange-500 mb-4" size={48} />
+        <h3 className="text-lg font-medium mb-2">Configuration Required</h3>
+        <p className="text-sm text-gray-600 text-center">
+          Supabase environment variables are missing. Please configure your Supabase connection to enable image management.
+        </p>
+      </div>
+    );
   }
 
   return (

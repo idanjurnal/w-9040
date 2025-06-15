@@ -7,6 +7,7 @@ interface AdminContextType {
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
   loading: boolean;
+  isSupabaseConfigured: boolean;
 }
 
 const AdminContext = createContext<AdminContextType | undefined>(undefined);
@@ -14,13 +15,27 @@ const AdminContext = createContext<AdminContextType | undefined>(undefined);
 export const AdminProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  
+  // Check if Supabase is properly configured
+  const isSupabaseConfigured = !!(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setLoading(false);
+      return;
+    }
+
     // Check if user is already logged in
     const checkAuth = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      setIsAdminLoggedIn(!!session);
-      setLoading(false);
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        setIsAdminLoggedIn(!!session);
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        setIsAdminLoggedIn(false);
+      } finally {
+        setLoading(false);
+      }
     };
 
     checkAuth();
@@ -34,9 +49,13 @@ export const AdminProvider = ({ children }: { children: React.ReactNode }) => {
     );
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [isSupabaseConfigured]);
 
   const login = async (email: string, password: string) => {
+    if (!isSupabaseConfigured) {
+      return { success: false, error: 'Supabase is not configured. Please set up environment variables.' };
+    }
+
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -54,11 +73,23 @@ export const AdminProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const logout = async () => {
-    await supabase.auth.signOut();
+    if (!isSupabaseConfigured) return;
+    
+    try {
+      await supabase.auth.signOut();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   };
 
   return (
-    <AdminContext.Provider value={{ isAdminLoggedIn, login, logout, loading }}>
+    <AdminContext.Provider value={{ 
+      isAdminLoggedIn, 
+      login, 
+      logout, 
+      loading, 
+      isSupabaseConfigured 
+    }}>
       {children}
     </AdminContext.Provider>
   );
