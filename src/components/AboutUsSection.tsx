@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const headline = "We believe moments are more than just pictures — they're a lasting legacy of feelings.";
@@ -22,7 +21,7 @@ const fadeInUpVariants = {
   }),
 };
 
-const bgImageUrl = "/lovable-uploads/c4a83f73-19eb-45e4-9c2c-205cd666bac1.png";
+const bgImageUrl = "/lovable-uploads/9cb2c52a-a3e8-4a41-9d46-2e9fc18bc48c.png";
 
 const AboutUsSection = () => (
   <section
@@ -77,4 +76,3 @@ const AboutUsSection = () => (
 );
 
 export default AboutUsSection;
-
