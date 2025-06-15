@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 const headline = "We believe moments are more than just pictures — they're a lasting legacy of feelings.";
@@ -28,18 +29,18 @@ const AboutUsSection = () => (
     id="about-us"
     className="relative py-20 bg-cream-50 overflow-hidden"
   >
-    {/* Bg Image Layer with blur + overlay */}
-    <div className="absolute inset-0 -z-10">
+    {/* Bg Image Layer with improved visibility */}
+    <div className="absolute inset-0 -z-10 pointer-events-none select-none">
       <img
         src={bgImageUrl}
         alt=""
-        className="w-full h-full object-cover object-center opacity-60 blur-[2.5px]"
-        style={{ filter: "blur(4px)" }}
+        className="w-full h-full object-cover object-center opacity-80 blur-[2.5px]"
+        // Removed extra inline blur style, only use Tailwind class
         draggable={false}
       />
-      {/* Cream/white overlay for readability */}
+      {/* Slight overlay for better text readability */}
       <div
-        className="absolute inset-0 bg-cream-50/70"
+        className="absolute inset-0 bg-cream-50/40"
         aria-hidden="true"
       />
     </div>
