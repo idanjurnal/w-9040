@@ -108,7 +108,7 @@ export const packages: ServiceCategoryData[] = [
       category: "Traditional Wedding",
       description: "Honoring cultural traditions with artistic documentation",
       icon: Gift,
-      sectionImage: "/lovable-uploads/c5ae7060-9deb-438d-9b1c-929eb6955277.png",
+      sectionImage: "/lovable-uploads/500b5779-920e-4448-b53d-e4b2c1ae54b8.png",
       packages: [
         {
           name: "Sequence I",
