@@ -1,90 +1,83 @@
 
-import { motion } from 'framer-motion';
-import { packages, bundlePackages } from '@/data/servicesData';
-import ServiceCategory from './ServiceCategory';
-import BundlePackageCard from './BundlePackageCard';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Camera, Video, Heart, Users } from 'lucide-react';
+
+const services = [
+  {
+    icon: Heart,
+    title: "Pre-Wedding Photography",
+    description: "Capture your love story before the big day with romantic and intimate pre-wedding sessions.",
+    price: "Starting from 2.5jt"
+  },
+  {
+    icon: Camera,
+    title: "Wedding Photography",
+    description: "Comprehensive wedding day coverage with honest, natural, and cinematic documentation.",
+    price: "Starting from 5jt"
+  },
+  {
+    icon: Video,
+    title: "Wedding Videography",
+    description: "Cinematic wedding films that tell your unique love story with earth-toned elegance.",
+    price: "Starting from 3.5jt"
+  },
+  {
+    icon: Users,
+    title: "Complete Wedding Package",
+    description: "Full day coverage including photography, videography, and special moments documentation.",
+    price: "Starting from 8jt"
+  }
+];
 
 const HistoServices = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-stone-50 via-amber-50 to-orange-50">
+    <section id="services" className="py-20 bg-cream-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-amber-900 mb-4">
-            Our <span className="font-serif italic">Services</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-sage-800 mb-4">
+            Our Services
           </h2>
-          <div className="w-24 h-px bg-amber-700 mx-auto mb-6"></div>
-          <p className="text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed font-light">
-            Every love story is unique. Choose the perfect package to preserve your most precious moments 
-            with our honest, cinematic, and natural approach to wedding documentation.
+          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
+            Professional wedding documentation with honest, cinematic, and natural approach
           </p>
         </motion.div>
 
-        {/* Service Categories */}
-        <div className="space-y-24">
-          {packages.map((category, categoryIndex) => (
-            <div key={category.category} className={`
-              ${categoryIndex % 4 === 0 ? 'bg-gradient-to-r from-red-50 to-orange-50' : ''}
-              ${categoryIndex % 4 === 1 ? 'bg-gradient-to-r from-amber-50 to-yellow-50' : ''}
-              ${categoryIndex % 4 === 2 ? 'bg-gradient-to-r from-emerald-50 to-teal-50' : ''}
-              ${categoryIndex % 4 === 3 ? 'bg-gradient-to-r from-blue-50 to-indigo-50' : ''}
-              rounded-2xl p-8 mb-12
-            `}>
-              <ServiceCategory category={category} categoryIndex={categoryIndex} />
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="bg-beige-50 p-6 rounded-lg text-center hover:bg-beige-100 transition-colors duration-300"
+            >
+              <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <service.icon className="w-8 h-8 text-sage-600" />
+              </div>
+              
+              <h3 className="text-xl font-semibold text-sage-800 mb-3">
+                {service.title}
+              </h3>
+              
+              <p className="text-sage-600 mb-4 leading-relaxed">
+                {service.description}
+              </p>
+              
+              <p className="text-sage-700 font-medium">
+                {service.price}
+              </p>
+            </motion.div>
           ))}
         </div>
-
-        {/* Bundle Packages */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-24"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-light text-stone-800 mb-4">
-              Bundle <span className="font-serif italic">Packages</span>
-            </h3>
-            <div className="w-20 h-px bg-stone-600 mx-auto mb-6"></div>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">
-              Complete packages that combine multiple services for the best value and experience
-            </p>
-          </div>
-
-          <div className="space-y-20">
-            {bundlePackages.map((bundle, index) => (
-              <div key={bundle.name} className={`
-                ${index % 2 === 0 ? 'bg-gradient-to-br from-rose-50 via-pink-50 to-red-50' : 'bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50'}
-                rounded-2xl p-8
-              `}>
-                <BundlePackageCard bundle={bundle} />
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-24"
-        >
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-8 border border-green-200 backdrop-blur-sm">
-            <h4 className="text-xl font-medium text-green-800 mb-3">Special Bonus</h4>
-            <p className="text-green-700 font-light">
-              Clients who choose our full packages receive complimentary makeup consultation and prewedding attire 
-              to make your experience even more complete and comfortable.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
