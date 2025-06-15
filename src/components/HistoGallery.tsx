@@ -79,7 +79,12 @@ const HistoGallery = () => {
         </Carousel>
         {/* Tambahkan Scroll-triggered Quote Reveal */}
         <div className="my-16">
-          <ScrollQuoteReveal quote="Moments may fade, but the story stays—hidden in the light, discovered in your smile." author="Histo Project" />
+          <ScrollQuoteReveal 
+            quote={`Life is like a camera.
+Just focus on what’s important and capture the good times
+develop from the negatives, and if things don’t work out, just take another shot.`} 
+            author="Histo Project" 
+          />
         </div>
         <motion.div initial={{
         opacity: 0,
