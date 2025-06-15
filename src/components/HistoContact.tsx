@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Instagram, Mail, Phone, MapPin, MessageCircle, Heart } from 'lucide-react';
 
 const HistoContact = () => {
-  const whatsappNumber = "+62812-3456-7890";
-  const instagramHandle = "histoproject";
-  const email = "hello@histoproject.com";
+  const whatsappNumber = "+62 895-1829-7897";
+  const instagramHandle = "histo.project";
+  const email = "histoproject@gmail.com";
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hi! I'm interested in learning more about Histo Project's photography services. Could you please share more information?");
@@ -13,7 +13,7 @@ const HistoContact = () => {
   };
 
   const handleInstagramClick = () => {
-    window.open(`https://instagram.com/${instagramHandle}`, '_blank');
+    window.open(`https://www.instagram.com/histo.project?utm_source=ig_web_button_share_sheet&igsh=MWtlNmVwbzY3eGZuaw==`, '_blank');
   };
 
   const handleEmailClick = () => {
