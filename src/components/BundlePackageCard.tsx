@@ -15,7 +15,7 @@ const BundlePackageCard = ({
           <div className="md:col-span-2 relative">
               {isLuxurious ? <div className="relative">
                   <img src={bundle.image} alt={`${bundle.name} main`} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]" />
-                  <img alt={`${bundle.name} additional`} className="absolute bottom-0 right-0 rounded-l-full shadow-xl w-1/2 h-auto aspect-[4/3] transform translate-x-4 translate-y-4 object-cover" src="/lovable-uploads/0d932d6d-7450-416a-bcbf-6681aa73194e.jpg" />
+                  <img alt={`${bundle.name} additional`} className="absolute bottom-0 right-0 rounded-l-full shadow-xl w-1/2 h-auto aspect-[4/3] transform translate-x-4 translate-y-4 object-cover" src="/lovable-uploads/cf0f4e80-4cd6-4172-8cce-f92665a4b3e2.jpg" />
                 </div> : <img src={bundle.image} alt={bundle.name} className="rounded-r-full shadow-xl w-full h-auto object-cover aspect-[3/4]" />}
               <div className="bg-white/20 backdrop-blur-sm border border-stone-200/50 p-4 rounded-lg mt-8 flex justify-between items-center">
                   <div>
