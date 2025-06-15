@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ScrollQuoteReveal from './ScrollQuoteReveal';
@@ -15,8 +16,8 @@ const HistoGallery = () => {
     alt: "Coffee Engagement Details",
     category: "Prewedding"
   }, {
-    url: "/lovable-uploads/09571b0f-fe63-43fd-9373-fc827bff8a2c.png",
-    // New traditional wedding image with couple in traditional attire
+    url: "/lovable-uploads/c5ae7060-9deb-438d-9b1c-929eb6955277.png",
+    // New traditional wedding image with couple in traditional attire (UPDATE from user)
     alt: "Traditional wedding couple",
     category: "Traditional"
   }, {
