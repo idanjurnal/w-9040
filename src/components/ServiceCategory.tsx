@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import ServicePackageCard from './ServicePackageCard';
 import { ServiceCategoryData } from '@/data/servicesData';
@@ -16,16 +15,15 @@ const ServiceCategory = ({ category, categoryIndex, sectionImage }: ServiceCateg
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
       viewport={{ once: true }}
-      className="group transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:bg-cream-200/20 rounded-xl"
+      className="group transition-all duration-400 hover:scale-[1.008] hover:shadow-lg hover:bg-cream-200/10 rounded-xl"
     >
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-light text-stone-800">{category.category}</h3>
         <p className="text-stone-600 font-light mt-2 max-w-2xl mx-auto">{category.description}</p>
         <div className="w-20 h-px bg-stone-400 mx-auto mt-4"></div>
       </div>
-      {/* Tampilkan custom image untuk section jika ada */}
       {sectionImage && (
-        <div className="mb-8 flex justify-center transition-transform duration-300 hover:scale-105">
+        <div className="mb-8 flex justify-center transition-transform duration-400 hover:scale-105">
           <img
             src={sectionImage}
             alt={category.category}

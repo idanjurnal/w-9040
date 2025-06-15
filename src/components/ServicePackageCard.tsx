@@ -14,7 +14,7 @@ const ServicePackageCard = ({ pkg, categoryName, pkgIndex }: ServicePackageCardP
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: pkgIndex * 0.2 }}
       viewport={{ once: true }}
-      className="group transition-all duration-300 hover:scale-[1.04] hover:shadow-xl"
+      className="group transition-all duration-400 hover:scale-[1.015] hover:shadow-md"
     >
       <div className="w-full text-right font-serif text-sm text-stone-500 mb-2">Pricelist 2025</div>
       <div className="border-t border-stone-300 mb-8"></div>
