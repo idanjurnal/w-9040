@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
 
 interface AdminContextType {
   isAdminLoggedIn: boolean;
@@ -17,69 +17,61 @@ export const AdminProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
   
   // Check if Supabase is properly configured
-  const isSupabaseConfigured = !!(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
+  const isSupabaseConfigured = true; // Always true since we're using the integrated client
 
   useEffect(() => {
-    if (!isSupabaseConfigured) {
-      setLoading(false);
-      return;
-    }
-
-    // Check if user is already logged in
-    const checkAuth = async () => {
+    // Check if admin is already logged in (stored in localStorage)
+    const adminSession = localStorage.getItem('admin_session');
+    if (adminSession) {
       try {
-        const { data: { session } } = await supabase.auth.getSession();
-        setIsAdminLoggedIn(!!session);
+        const session = JSON.parse(adminSession);
+        // Check if session is still valid (not expired)
+        if (session.expires_at && new Date(session.expires_at) > new Date()) {
+          setIsAdminLoggedIn(true);
+        } else {
+          localStorage.removeItem('admin_session');
+        }
       } catch (error) {
-        console.error('Auth check failed:', error);
-        setIsAdminLoggedIn(false);
-      } finally {
-        setLoading(false);
+        localStorage.removeItem('admin_session');
       }
-    };
-
-    checkAuth();
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setIsAdminLoggedIn(!!session);
-        setLoading(false);
-      }
-    );
-
-    return () => subscription.unsubscribe();
-  }, [isSupabaseConfigured]);
+    }
+    setLoading(false);
+  }, []);
 
   const login = async (email: string, password: string) => {
-    if (!isSupabaseConfigured) {
-      return { success: false, error: 'Supabase is not configured. Please set up environment variables.' };
-    }
-
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+      // Use Supabase RPC to verify password
+      const { data, error } = await supabase.rpc('verify_admin_login', {
+        input_email: email,
+        input_password: password
       });
 
       if (error) {
-        return { success: false, error: error.message };
+        console.error('Login error:', error);
+        return { success: false, error: 'Login gagal. Periksa email dan password Anda.' };
       }
 
-      return { success: true };
+      if (data) {
+        // Create admin session
+        const session = {
+          email: email,
+          expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 hours
+        };
+        localStorage.setItem('admin_session', JSON.stringify(session));
+        setIsAdminLoggedIn(true);
+        return { success: true };
+      } else {
+        return { success: false, error: 'Email atau password salah.' };
+      }
     } catch (error) {
-      return { success: false, error: 'Login failed' };
+      console.error('Login error:', error);
+      return { success: false, error: 'Terjadi kesalahan saat login.' };
     }
   };
 
   const logout = async () => {
-    if (!isSupabaseConfigured) return;
-    
-    try {
-      await supabase.auth.signOut();
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
+    localStorage.removeItem('admin_session');
+    setIsAdminLoggedIn(false);
   };
 
   return (
