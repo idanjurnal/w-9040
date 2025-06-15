@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Package } from '@/data/servicesData';
 
@@ -19,9 +18,6 @@ const ServicePackageCard = ({ pkg, categoryName, pkgIndex }: ServicePackageCardP
     >
       <div className="w-full text-right font-serif text-sm text-stone-500 mb-2">Pricelist 2025</div>
       <div className="border-t border-stone-300 mb-8"></div>
-      <div className="my-6">
-        <img src={pkg.image} alt={pkg.name} className="rounded-lg shadow-xl w-full max-w-4xl mx-auto h-auto object-cover aspect-[16/9]"/>
-      </div>
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/20 backdrop-blur-sm border border-stone-200/50 p-6 rounded-lg mb-6">
             <div className="md:flex justify-between items-center mb-4">
