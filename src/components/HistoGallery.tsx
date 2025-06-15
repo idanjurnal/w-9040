@@ -9,36 +9,27 @@ import {
 import ScrollQuoteReveal from './ScrollQuoteReveal';
 
 const HistoGallery = () => {
+  // Sisa gambar upload yang belum digunakan di packages/bundle:
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Intimate couple portrait",
-      category: "Prewedding"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Traditional wedding ceremony",
-      category: "Traditional"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Wedding details and rings",
-      category: "Details"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1525772764200-be829a350797?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Engagement session",
+      url: "/lovable-uploads/20218d11-3345-48b5-815e-def6b465fc76.png", // Couple + anak-anak
+      alt: "Engagement Session (anak-anak)",
       category: "Engagement"
     },
     {
-      url: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Wedding day celebration",
-      category: "Wedding Day"
+      url: "/lovable-uploads/297db747-1773-454e-9067-fd550b11ee79.png", // Couple minum kopi + detail cappuccino
+      alt: "Coffee Engagement Details",
+      category: "Prewedding"
     },
     {
-      url: "https://images.unsplash.com/photo-1470139953461-fd312e9e1266?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Cinematic couple portrait",
-      category: "Cinematic"
+      url: "/lovable-uploads/8d434a94-7b80-4f60-a5cb-e23e24e65585.png", // Group wedding pose
+      alt: "Traditional wedding with friends",
+      category: "Traditional"
+    },
+    {
+      url: "/lovable-uploads/48ce83d9-42b7-4d95-9cbb-b918e3b63efc.png", // Couple in field of yellow flowers
+      alt: "Prewedding field flowers",
+      category: "Prewedding"
     }
   ];
 

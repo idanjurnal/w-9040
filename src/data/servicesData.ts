@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Camera, Video, Heart, Gift } from 'lucide-react';
 
@@ -54,15 +53,22 @@ export const packages: ServiceCategoryData[] = [
           name: "Sequence I",
           description: "Photo documentation",
           price: "IDR 2,000,000",
-          features: ["1 Photographer", "1 Assistant", "5 Hours Photo Session", "Unlimited Shoots", "Free Edit 100+ Photos", "All Files via Google Drive"],
-          image: "https://images.unsplash.com/photo-1608914873398-3a211fc5e219?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Assistant", "5 Hours Photo Session", "Unlimited Shoots",
+            "Free Edit 100+ Photos", "All Files via Google Drive"
+          ],
+          image: "/lovable-uploads/8185c133-59e6-44e4-826c-e4638031a64a.png" // Gambar pertama dari upload (pasangan duduk)
         },
         {
-          name: "Sequence II", 
+          name: "Sequence II",
           description: "Photo + Video documentation",
           price: "IDR 3,000,000",
-          features: ["1 Photographer", "1 Videographer", "1 Assistant", "5 Hours Photo Session", "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "Free Edit 100+ Photos", "All Files via Google Drive"],
-          image: "https://images.unsplash.com/photo-1595393498310-2d826a79a07a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Videographer", "1 Assistant", "5 Hours Photo Session",
+            "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "Free Edit 100+ Photos",
+            "All Files via Google Drive"
+          ],
+          image: "" // Tidak perlu, sudah tidak ditampilkan per sequence
         }
       ]
     },
@@ -74,16 +80,24 @@ export const packages: ServiceCategoryData[] = [
         {
           name: "Sequence I",
           description: "Photo documentation",
-          price: "IDR 2,000,000", 
-          features: ["1 Photographer", "1 Assistant", "4 Hours Photo Session", "Unlimited Shoots", "Free Edit 150+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1531818357353-e5b1a5d063a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          price: "IDR 2,000,000",
+          features: [
+            "1 Photographer", "1 Assistant", "4 Hours Photo Session", "Unlimited Shoots",
+            "Free Edit 150+ Photos Selected by Editor"
+          ],
+          image: "/lovable-uploads/0038392e-0161-46ee-9883-3ad49c14a6c8.png" // Close-up Prewedding
         },
         {
           name: "Sequence II",
           description: "Complete package with prints",
           price: "IDR 3,500,000",
-          features: ["1 Photographer", "1 Videographer", "1 Assistant", "6 Hours Photo Session", "Unlimited Shoots", "Cinematic Video 1-2 Minutes", "1 Printed Photo + Frame 16R", "5 Printed Photo + Frame 5R", "Free Potrait video for medsos 15-30 Second", "Free Edit 150+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1520338258442-bd94a3506085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Videographer", "1 Assistant", "6 Hours Photo Session",
+            "Unlimited Shoots", "Cinematic Video 1-2 Minutes", "1 Printed Photo + Frame 16R",
+            "5 Printed Photo + Frame 5R", "Free Potrait video for medsos 15-30 Second",
+            "Free Edit 150+ Photos Selected by Editor"
+          ],
+          image: ""
         }
       ]
     },
@@ -96,22 +110,40 @@ export const packages: ServiceCategoryData[] = [
           name: "Sequence I",
           description: "Essential coverage",
           price: "IDR 4,500,000",
-          features: ["1 Photographer", "1 Cinematic Videographer", "1 Assistant", "8 Hours Photo Session", "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "1 Magazine Album", "1 Printed Photo + Frame 16R", "Files via Google Drive", "Free Edit 300+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1629865181126-17e4a13f63e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Cinematic Videographer", "1 Assistant", "8 Hours Photo Session",
+            "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "1 Magazine Album",
+            "1 Printed Photo + Frame 16R", "Files via Google Drive",
+            "Free Edit 300+ Photos Selected by Editor"
+          ],
+          image: "/lovable-uploads/f4de4469-2c9d-4a45-b471-3140614835dd.png" // Pasangan adat
         },
         {
-          name: "Sequence II", 
+          name: "Sequence II",
           description: "Extended coverage",
           price: "IDR 5,000,000",
-          features: ["1 Photographer", "1 Candid Photographer", "1 Cinematic Videographer", "1 Assistant", "8 Hours Photo Session", "Unlimited Shoots", "Cinematic Video 1-3 Minutes", "1 Magazine Album", "1 Printed Photo + Frame 16R", "Free Flashdisk 32 GB", "Free Potrait Video for Social Media 15-30 Second", "Free Edit 300+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1616134259837-142274474773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Candid Photographer", "1 Cinematic Videographer",
+            "1 Assistant", "8 Hours Photo Session", "Unlimited Shoots",
+            "Cinematic Video 1-3 Minutes", "1 Magazine Album",
+            "1 Printed Photo + Frame 16R", "Free Flashdisk 32 GB",
+            "Free Potrait Video for Social Media 15-30 Second",
+            "Free Edit 300+ Photos Selected by Editor"
+          ],
+          image: ""
         },
         {
           name: "Sequence III",
-          description: "Premium documentation", 
+          description: "Premium documentation",
           price: "IDR 6,000,000",
-          features: ["1 Photographer", "1 Candid Photographer", "2 Videographer", "1 Assistant", "8 Hours Photo Session", "Unlimited Shoots", "Clip Video 1-3 Minutes", "Full Video 7-10 minutes", "1 Magazine Album", "1 Printed Photo + Frame 16R", "Free Flashdisk 32 GB", "Free Potrait Video for Social Media 15-30 Second", "Free Edit 300+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1611175657329-75382181339b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Candid Photographer", "2 Videographer", "1 Assistant",
+            "8 Hours Photo Session", "Unlimited Shoots", "Clip Video 1-3 Minutes",
+            "Full Video 7-10 minutes", "1 Magazine Album", "1 Printed Photo + Frame 16R",
+            "Free Flashdisk 32 GB", "Free Potrait Video for Social Media 15-30 Second",
+            "Free Edit 300+ Photos Selected by Editor"
+          ],
+          image: ""
         }
       ]
     },
@@ -124,28 +156,26 @@ export const packages: ServiceCategoryData[] = [
           name: "Sequence I",
           description: "Complete wedding coverage",
           price: "IDR 9,000,000",
-          features: ["1 Photographer", "1 Candid Photographer", "1 Videographer", "1 Assistant", "Unlimited Shoots", "Clip Video 2-3 Minutes", "1 Album Magazine", "Free Flashdisk 16 GB", "Free Potrait Video for Social Media 15-30 Second", "Free Edit 300+ Photos Selected by Editor"],
-          image: "https://images.unsplash.com/photo-1597855510719-21ab6d302912?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          features: [
+            "1 Photographer", "1 Candid Photographer", "1 Videographer", "1 Assistant",
+            "Unlimited Shoots", "Clip Video 2-3 Minutes", "1 Album Magazine",
+            "Free Flashdisk 16 GB", "Free Potrait Video for Social Media 15-30 Second",
+            "Free Edit 300+ Photos Selected by Editor"
+          ],
+          image: "/lovable-uploads/f8552675-0cb3-418f-a593-cd80f94205d4.png" // Pengantin gaun panjang
         },
         {
           name: "Sequence II",
-          description: "Luxury wedding documentation", 
+          description: "Luxury wedding documentation",
           price: "IDR 11,000,000",
           features: [
-            "1 Photographer",
-            "1 Candid Photographer",
-            "2 Videographer",
-            "1 Assistant",
-            "Unlimited Shoots",
-            "Same Day Edit Video",
-            "Full Video 7 - 10 Minutes",
-            "1 Album Magazine",
-            "1 Printed Photo + Frame 16R",
-            "Free Flashdisk 32GB",
+            "1 Photographer", "1 Candid Photographer", "2 Videographer", "1 Assistant",
+            "Unlimited Shoots", "Same Day Edit Video", "Full Video 7 - 10 Minutes",
+            "1 Album Magazine", "1 Printed Photo + Frame 16R", "Free Flashdisk 32GB",
             "Free Potrait Video for Social Media 15-30 Second",
             "Free Edit 300+ Photos Selected by Editor"
           ],
-          image: "https://images.unsplash.com/photo-1611175657329-75382181339b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          image: ""
         }
       ]
     }
@@ -156,56 +186,41 @@ export const bundlePackages: BundlePackage[] = [
       name: "Premium Bundle",
       title: "PREMIUM",
       price: "IDR 7,500,000",
-      image: "https://images.unsplash.com/photo-1520854221256-17452cc3da25?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      image: "/lovable-uploads/5b300858-832d-4281-89fc-92e21c42d384.png", // Couple sitting in field (sisa upload)
       subPackages: [
         {
           title: "Prewedding",
           features: [
-            "1 Photographer",
-            "1 Videographer",
-            "1 Assistant",
-            "6 Hours Photo Session",
-            "Unlimited Shoots",
-            "Cinematic Video 1 - 2 minutes",
-            "1 Printed Photo + Frame 16R",
-            "5 Printed Photo + Frame 5R",
-            "Free Potrait Video for medsos 15-30 Second",
-            "Free Edit 150+ Photos Selected by Editor",
-          ],
+            "1 Photographer", "1 Videographer", "1 Assistant",
+            "6 Hours Photo Session", "Unlimited Shoots",
+            "Cinematic Video 1 - 2 minutes", "1 Printed Photo + Frame 16R",
+            "5 Printed Photo + Frame 5R", "Free Potrait Video for medsos 15-30 Second",
+            "Free Edit 150+ Photos Selected by Editor"
+          ]
         },
         {
           title: "Wedding",
           features: [
-            "1 Photographer",
-            "1 Candid Photographer",
-            "1 Videographer",
-            "1 Assistant",
-            "8 Hours Photo Session Wedding Day",
-            "1 Cinematic Wedding Video",
-            "1 Printed Photo + Frame 16RP",
-            "1 Album Magazine",
-            "Free Flashdisk 32GB",
-            "Free Edit 300+ Photos Selected by Editor",
-          ],
-        },
-      ],
+            "1 Photographer", "1 Candid Photographer", "1 Videographer", "1 Assistant",
+            "8 Hours Photo Session Wedding Day", "1 Cinematic Wedding Video",
+            "1 Printed Photo + Frame 16RP", "1 Album Magazine",
+            "Free Flashdisk 32GB", "Free Edit 300+ Photos Selected by Editor"
+          ]
+        }
+      ]
     },
     {
-      name: "Luxurious Bundle", 
+      name: "Luxurious Bundle",
       title: "LUXURIOUS",
       price: "IDR 8,500,000",
+      image: "/lovable-uploads/4be40730-d1a3-4aa7-85ce-f4d4ab2cd457.png", // Couple with adat di jendela
       subPackages: [
         {
           title: "Prewedding",
           features: [
-            "1 Photographer",
-            "1 Videographer", 
-            "1 Assistant",
-            "6 Hours Photo Session",
-            "Unlimited Shoots",
-            "Cinematic Video 1 - 2 Minutes",
-            "1 Printed Photo + Frame 16R",
-            "5 Printed Photo + Frame 5R",
+            "1 Photographer", "1 Videographer", "1 Assistant",
+            "6 Hours Photo Session", "Unlimited Shoots", "Cinematic Video 1 - 2 Minutes",
+            "1 Printed Photo + Frame 16R", "5 Printed Photo + Frame 5R",
             "Free Potrait Video for Social Media 15-30 Second",
             "Free Edit 150+ Photos Selected by Editor"
           ]
@@ -213,11 +228,8 @@ export const bundlePackages: BundlePackage[] = [
         {
           title: "Traditional Ceremony",
           features: [
-            "1 Photographer",
-            "1 Videographer",
-            "6 Hours Photo Session",
-            "Unlimited Shoots",
-            "Cinematic Video 1 - 2 Minutes",
+            "1 Photographer", "1 Videographer", "6 Hours Photo Session",
+            "Unlimited Shoots", "Cinematic Video 1 - 2 Minutes",
             "Free Potrait Video for Social Media 15-30 Second",
             "Free Edit 100+ Photos Selected by Editor"
           ]
@@ -225,19 +237,12 @@ export const bundlePackages: BundlePackage[] = [
         {
           title: "Wedding",
           features: [
-            "1 Photographers",
-            "1 Candid Photographers",
-            "1 Videographer",
-            "1 Assistant",
-            "8 Hours Photo Session Wedding Day",
-            "1 Cinematic Wedding Video",
-            "1 Printed Photos + Frame 16RP",
-            "1 Album Magazine",
-            "1 Flashdisk 32GB",
+            "1 Photographers", "1 Candid Photographers", "1 Videographer", "1 Assistant",
+            "8 Hours Photo Session Wedding Day", "1 Cinematic Wedding Video",
+            "1 Printed Photos + Frame 16RP", "1 Album Magazine", "1 Flashdisk 32GB",
             "Free Edit 300+ Photos Selected by Editor"
           ]
         }
-      ],
-      image: "https://images.unsplash.com/photo-1532702824322-75c102758826?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      ]
     }
   ];

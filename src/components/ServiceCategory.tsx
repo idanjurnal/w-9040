@@ -8,7 +8,7 @@ interface ServiceCategoryProps {
 }
 
 const ServiceCategory = ({ category, categoryIndex }: ServiceCategoryProps) => {
-  // Ambil gambar dari paket pertama (asumsi selalu ada setidaknya satu paket per kategori)
+  // Ambil gambar dari paket pertama (asumsi ada 1 gambar per kategori, sudah dipilih di data)
   const mainImage = category.packages[0]?.image;
 
   return (
@@ -24,7 +24,7 @@ const ServiceCategory = ({ category, categoryIndex }: ServiceCategoryProps) => {
         <p className="text-stone-600 font-light mt-2 max-w-2xl mx-auto">{category.description}</p>
         <div className="w-20 h-px bg-stone-400 mx-auto mt-4"></div>
       </div>
-      {/* Tampilkan satu main image di atas semua sequence */}
+      {/* Tampilkan hanya satu main image untuk section ini */}
       {mainImage && (
         <div className="mb-8 flex justify-center transition-transform duration-300 hover:scale-105">
           <img
