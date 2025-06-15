@@ -22,12 +22,32 @@ const fadeInUpVariants = {
   }),
 };
 
+const bgImageUrl = "/lovable-uploads/c4a83f73-19eb-45e4-9c2c-205cd666bac1.png";
+
 const AboutUsSection = () => (
-  <section id="about-us" className="py-20 bg-cream-50">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section
+    id="about-us"
+    className="relative py-20 bg-cream-50 overflow-hidden"
+  >
+    {/* Bg Image Layer with blur + overlay */}
+    <div className="absolute inset-0 -z-10">
+      <img
+        src={bgImageUrl}
+        alt=""
+        className="w-full h-full object-cover object-center opacity-60 blur-[2.5px]"
+        style={{ filter: "blur(4px)" }}
+        draggable={false}
+      />
+      {/* Cream/white overlay for readability */}
+      <div
+        className="absolute inset-0 bg-cream-50/70"
+        aria-hidden="true"
+      />
+    </div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Headline */}
       <motion.h2
-        className="text-4xl md:text-5xl text-center font-serif italic font-light text-stone-800 mb-8"
+        className="text-4xl md:text-5xl text-center font-serif italic font-light text-stone-800 mb-8 drop-shadow-lg"
         variants={fadeInUpVariants}
         initial="hidden"
         whileInView="visible"
@@ -41,7 +61,7 @@ const AboutUsSection = () => (
         {aboutParagraphs.map((text, idx) => (
           <motion.p
             key={idx}
-            className="text-lg md:text-xl text-center text-stone-600 font-light"
+            className="text-lg md:text-xl text-center text-stone-700 font-light drop-shadow"
             variants={fadeInUpVariants}
             initial="hidden"
             whileInView="visible"
@@ -57,3 +77,4 @@ const AboutUsSection = () => (
 );
 
 export default AboutUsSection;
+
