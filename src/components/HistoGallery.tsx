@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import {
   Carousel,
@@ -7,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ScrollQuoteReveal from './ScrollQuoteReveal';
 
 const HistoGallery = () => {
   const galleryImages = [
@@ -67,7 +67,7 @@ const HistoGallery = () => {
             {galleryImages.map((image, index) => (
               <CarouselItem key={index}>
                 <motion.div
-                  className="group relative overflow-hidden rounded-xl shadow-md aspect-[4/5] bg-white"
+                  className="group relative overflow-hidden rounded-xl shadow-md aspect-[4/5] bg-white hover:scale-105 hover:shadow-amber-100/70 transition duration-300"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6 }}
@@ -92,7 +92,13 @@ const HistoGallery = () => {
             <CarouselNext className="bg-stone-200 hover:bg-stone-300 border-stone-300 text-stone-700" />
           </div>
         </Carousel>
-
+        {/* Tambahkan Scroll-triggered Quote Reveal */}
+        <div className="my-16">
+          <ScrollQuoteReveal
+            quote="Moments may fade, but the story stays—hidden in the light, discovered in your smile."
+            author="Histo Project"
+          />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +106,7 @@ const HistoGallery = () => {
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <button className="px-10 py-4 border border-stone-600 text-stone-700 hover:bg-stone-600 hover:text-cream-100 font-light rounded-sm transition-all duration-300 transform hover:scale-105">
+          <button className="px-10 py-4 border border-stone-600 text-stone-700 hover:bg-stone-600 hover:text-cream-100 font-light rounded-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
             View Complete Portfolio
           </button>
         </motion.div>

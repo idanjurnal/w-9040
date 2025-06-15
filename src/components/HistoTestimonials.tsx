@@ -88,7 +88,7 @@ const HistoTestimonials = () => {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
-                  <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-stone-200/50 overflow-hidden mx-4 p-8">
+                  <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-stone-200/50 overflow-hidden mx-4 p-8 group hover:shadow-amber-200 transition-shadow duration-300 hover:scale-[1.02]">
                     <div className="text-center">
                       <div className="text-stone-600 mb-6 flex justify-center">
                         <Quote className="w-8 h-8" />
@@ -108,7 +108,7 @@ const HistoTestimonials = () => {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-16 h-16 rounded-full object-cover mr-4"
+                          className="w-16 h-16 rounded-full object-cover mr-4 group-hover:ring-4 group-hover:ring-amber-200 transition-all duration-300"
                         />
                         <div className="text-left">
                           <h4 className="font-medium text-stone-800 text-lg">{testimonial.name}</h4>

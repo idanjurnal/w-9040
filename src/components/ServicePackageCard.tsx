@@ -14,12 +14,12 @@ const ServicePackageCard = ({ pkg, categoryName, pkgIndex }: ServicePackageCardP
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: pkgIndex * 0.2 }}
       viewport={{ once: true }}
-      className="group transition-all duration-300 hover:scale-[1.02]"
+      className="group transition-all duration-300 hover:scale-[1.04] hover:shadow-xl"
     >
       <div className="w-full text-right font-serif text-sm text-stone-500 mb-2">Pricelist 2025</div>
       <div className="border-t border-stone-300 mb-8"></div>
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white/20 backdrop-blur-sm border border-stone-200/50 p-6 rounded-lg mb-6">
+        <div className="bg-white/20 backdrop-blur-sm border border-stone-200/50 p-6 rounded-lg mb-6 group-hover:border-amber-300 group-hover:bg-amber-100/30 transition-all">
             <div className="md:flex justify-between items-center mb-4">
                 <div className="mb-4 md:mb-0">
                     <h4 className="text-2xl font-serif italic text-stone-800">{pkg.name}</h4>

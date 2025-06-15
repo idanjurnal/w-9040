@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import ServicePackageCard from './ServicePackageCard';
 import { ServiceCategoryData } from '@/data/servicesData';
@@ -18,6 +17,7 @@ const ServiceCategory = ({ category, categoryIndex }: ServiceCategoryProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
       viewport={{ once: true }}
+      className="group transition-all duration-300 hover:scale-[1.01] hover:shadow-2xl hover:bg-cream-200/20 rounded-xl"
     >
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-light text-stone-800">{category.category}</h3>
@@ -26,11 +26,11 @@ const ServiceCategory = ({ category, categoryIndex }: ServiceCategoryProps) => {
       </div>
       {/* Tampilkan satu main image di atas semua sequence */}
       {mainImage && (
-        <div className="mb-8 flex justify-center">
+        <div className="mb-8 flex justify-center transition-transform duration-300 hover:scale-105">
           <img
             src={mainImage}
             alt={category.category}
-            className="rounded-lg shadow-xl w-full max-w-3xl h-auto object-cover aspect-[16/9]"
+            className="rounded-lg shadow-xl w-full max-w-3xl h-auto object-cover aspect-[16/9] hover:shadow-[0_8px_32px_0_rgba(216,159,84,0.12)]"
           />
         </div>
       )}
@@ -44,4 +44,3 @@ const ServiceCategory = ({ category, categoryIndex }: ServiceCategoryProps) => {
 };
 
 export default ServiceCategory;
-

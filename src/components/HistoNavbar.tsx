@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from "lucide-react";
@@ -17,7 +16,12 @@ const HistoNavbar = () => {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Set default smooth scroll behavior for html
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.documentElement.style.scrollBehavior = '';
+    };
   }, []);
 
   const toggleMenu = () => {
