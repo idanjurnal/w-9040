@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'sonner';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
 import ConfigurationWarning from './admin/ConfigurationWarning';
 import ImageUploadArea from './admin/ImageUploadArea';
 import ImageGrid from './admin/ImageGrid';
@@ -26,15 +26,7 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Check if Supabase is properly configured
-  const isSupabaseConfigured = !!(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
-
   const fetchImages = useCallback(async () => {
-    if (!isSupabaseConfigured) {
-      setLoading(false);
-      return;
-    }
-
     try {
       const { data, error } = await supabase
         .from('website_images')
@@ -50,18 +42,13 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
     } finally {
       setLoading(false);
     }
-  }, [category, isSupabaseConfigured]);
+  }, [category]);
 
   useEffect(() => {
     fetchImages();
   }, [fetchImages]);
 
   const uploadImage = async (file: File) => {
-    if (!isSupabaseConfigured) {
-      toast.error('Supabase is not configured');
-      return;
-    }
-
     try {
       setUploading(true);
       
@@ -103,11 +90,6 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
   };
 
   const deleteImage = async (image: ImageData) => {
-    if (!isSupabaseConfigured) {
-      toast.error('Supabase is not configured');
-      return;
-    }
-
     try {
       // Delete from storage
       const filePath = image.url.split('/').slice(-2).join('/');
@@ -133,7 +115,7 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
-    if (!files || !isSupabaseConfigured) return;
+    if (!files) return;
 
     if (multiple) {
       Array.from(files).forEach(file => uploadImage(file));
@@ -144,7 +126,6 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
-    if (!isSupabaseConfigured) return;
     
     const files = e.dataTransfer.files;
     if (!files) return;
@@ -162,10 +143,6 @@ const ImageUploadSection = ({ title, category, description, multiple = false }: 
 
   if (loading) {
     return <div className="p-4">Loading...</div>;
-  }
-
-  if (!isSupabaseConfigured) {
-    return <ConfigurationWarning />;
   }
 
   return (

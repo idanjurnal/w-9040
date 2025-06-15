@@ -6,9 +6,9 @@ const ConfigurationWarning = () => {
   return (
     <div className="h-full flex flex-col items-center justify-center p-8">
       <AlertCircle className="text-orange-500 mb-4" size={48} />
-      <h3 className="text-lg font-medium mb-2">Configuration Required</h3>
+      <h3 className="text-lg font-medium mb-2">Storage Setup Required</h3>
       <p className="text-sm text-gray-600 text-center">
-        Supabase environment variables are missing. Please configure your Supabase connection to enable image management.
+        Storage bucket needs to be created. Please contact administrator to set up the image storage bucket.
       </p>
     </div>
   );
