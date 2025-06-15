@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import HistoNavbar from '@/components/HistoNavbar';
 import HistoFooter from '@/components/HistoFooter';
-import ContactInfo from '@/components/ContactInfo';
-import FloatingContactButton from '@/components/FloatingContactButton';
+// Removed ContactInfo and FloatingContactButton as they no longer exist
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -23,9 +22,8 @@ const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
     <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
       <HistoNavbar />
       {children}
-      {showContact && <ContactInfo />}
+      {/* Removed ContactInfo and FloatingContactButton as part of cleanup */}
       <HistoFooter />
-      {showContact && <FloatingContactButton />}
     </div>
   );
 };
