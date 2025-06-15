@@ -1,4 +1,3 @@
-
 import PageLayout from '@/components/PageLayout';
 import HistoHero from '@/components/HistoHero';
 import HistoServices from '@/components/HistoServices';
@@ -6,6 +5,7 @@ import HistoGallery from '@/components/HistoGallery';
 import HistoTestimonials from '@/components/HistoTestimonials';
 import HistoContact from '@/components/HistoContact';
 import SEO from '@/components/SEO';
+import AboutUsSection from '@/components/AboutUsSection';
 
 const Index = () => {
   return (
@@ -17,6 +17,7 @@ const Index = () => {
         keywords={['wedding photography bandung', 'wedding videography bandung', 'prewedding bandung', 'histo project', 'engagement photography', 'traditional wedding documentation']}
       />
       <HistoHero />
+      <AboutUsSection />
       <HistoServices />
       <HistoGallery />
       <HistoTestimonials />
